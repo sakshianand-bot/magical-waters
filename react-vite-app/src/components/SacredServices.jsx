@@ -26,7 +26,7 @@ const SacredServices = ({ onServiceSelect }) => {
   ];
 
   return (
-    <section className="bg-white py-24 px-6 font-serif overflow-hidden">
+    <section id="services" className="bg-white py-24 px-6 font-serif overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
