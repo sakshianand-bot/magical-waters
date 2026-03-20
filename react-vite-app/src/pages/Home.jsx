@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Hero from '../components/Hero'
 import About from '../components/About'
+import Scriptures from '../components/Scriptures'
 import Services from '../components/Services'
 import SacredServices from '../components/SacredServices'
 import Contact from '../components/Contact'
@@ -16,6 +17,7 @@ const Home = () => {
       <BackgroundEffects />
       <Hero />
       <About />
+      <Scriptures />
       {/* <Services onServiceSelect={setSelectedService} /> */}
       <SacredServices onServiceSelect={setSelectedService} />
       <Contact />
