@@ -69,10 +69,10 @@ const Scriptures = () => {
                     <h3 className="text-gray-800 font-bold text-lg mb-3">
                       {scripture.theme}
                     </h3>
-                    <p className="text-gray-600 text-base leading-relaxed mb-4 font-medium">
+                    <p className="text-gray-400 text-base leading-relaxed mb-4 font-medium">
                       "{scripture.text}"
                     </p>
-                    <div className="text-xs text-gray-500 font-semibold tracking-wide">
+                    <div className="text-lg text-gray-600 font-semibold tracking-wide mt-4">
                       {scripture.reference}
                     </div>
                   </>
