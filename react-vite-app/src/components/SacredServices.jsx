@@ -26,7 +26,8 @@ const SacredServices = ({ onServiceSelect }) => {
   ];
 
   return (
-    <section id="services" className="bg-white py-24 px-6 font-serif overflow-hidden">
+    <section id="services" className="py-24 px-4 md:px-6 font-serif overflow-hidden relative">
+      {/* Unified Container for the entire Sacred Services section is now removed as per user request */}
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
@@ -42,20 +43,27 @@ const SacredServices = ({ onServiceSelect }) => {
         </div>
 
         {/* Grid Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-20">
           {services.map((service, index) => (
             <div key={index} className="flex flex-col items-center group">
               
               {/* Refined Quatrefoil Shape */}
-              <div className="relative w-48 h-48 mb-12 cursor-pointer"
+              <div className="relative w-64 h-64 mb-12 cursor-pointer"
                    onClick={() => onServiceSelect(service)}>
-                {/* The Background Shape Logic */}
-                <div className="absolute inset-0 bg-[#F7F4F0] rounded-2xl rotate-45"></div>
-                <div className="absolute inset-0 bg-[#F7F4F0] rounded-[3rem]"></div>
+                {/* SVG Quatrefoil Background Shape */}
+                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+                  <defs>
+                    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feDropShadow dx="0" dy="0" stdDeviation="3" floodOpacity="0.1"/>
+                    </filter>
+                  </defs>
+                  {/* Quatrefoil/Scalloped Shape */}
+                  <path d="M 100,20 Q 130,20 140,50 Q 160,60 160,100 Q 160,140 140,150 Q 130,180 100,180 Q 70,180 60,150 Q 40,140 40,100 Q 40,60 60,50 Q 70,20 100,20 Z" fill="#F7F4F0" filter="url(#shadow)"/>
+                </svg>
                 
                 {/* Content inside shape */}
                 <div className="absolute inset-0 flex items-center justify-center z-10">
-                  <span className="text-4xl filter grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110">
+                  <span className="text-4xl transition-all duration-500 transform group-hover:scale-110">
                     {service.icon}
                   </span>
                 </div>
