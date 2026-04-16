@@ -6,6 +6,8 @@ const SacredServices = ({ onServiceSelect }) => {
       icon: "✨",
       title: "Sacred Reiki Session",
       description: "Traditional Reiki healing to balance your energy and restore inner peace",
+      accent: "#E0F2FE", // Light blue
+      iconColor: "#0284C7",
       options: [
         { label: "In Person Session", price: "$60", duration: "60 min" },
         { label: "Remote Healing", price: "$50", duration: "45 min" }
@@ -15,12 +17,16 @@ const SacredServices = ({ onServiceSelect }) => {
       icon: "🌿",
       title: "Energy Massage Ritual",
       description: "Combined Reiki with therapeutic massage and full energy clearing",
+      accent: "#DCFCE7", // Light green
+      iconColor: "#16A34A",
       options: [{ label: "Full Ritual", price: "$80", duration: "90 min" }]
     },
     {
       icon: "💧",
       title: "Intention Glass Bottles",
       description: "Personalized water structuring bottles with custom etched sigils",
+      accent: "#DBEAFE", // Light indigo/blue
+      iconColor: "#2563EB",
       options: [{ label: "Custom Vessel", price: "$25", duration: "Shipping included" }]
     }
   ];
@@ -57,13 +63,18 @@ const SacredServices = ({ onServiceSelect }) => {
                       <feDropShadow dx="0" dy="0" stdDeviation="3" floodOpacity="0.1"/>
                     </filter>
                   </defs>
-                  {/* Quatrefoil/Scalloped Shape */}
-                  <path d="M 100,20 Q 130,20 140,50 Q 160,60 160,100 Q 160,140 140,150 Q 130,180 100,180 Q 70,180 60,150 Q 40,140 40,100 Q 40,60 60,50 Q 70,20 100,20 Z" fill="#F7F4F0" filter="url(#shadow)"/>
+                  {/* Quatrefoil/Scalloped Shape - now using service.accent */}
+                  <path 
+                    d="M 100,20 Q 130,20 140,50 Q 160,60 160,100 Q 160,140 140,150 Q 130,180 100,180 Q 70,180 60,150 Q 40,140 40,100 Q 40,60 60,50 Q 70,20 100,20 Z" 
+                    fill={service.accent} 
+                    className="transition-colors duration-500"
+                    filter="url(#shadow)"
+                  />
                 </svg>
                 
                 {/* Content inside shape */}
                 <div className="absolute inset-0 flex items-center justify-center z-10">
-                  <span className="text-4xl transition-all duration-500 transform group-hover:scale-110">
+                  <span className="text-5xl transition-all duration-500 transform group-hover:scale-125 select-none" style={{ color: service.iconColor }}>
                     {service.icon}
                   </span>
                 </div>
