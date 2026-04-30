@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Hero from '../components/Hero'
+import AboutLaura from '../components/AboutLaura'
 import About from '../components/About'
 import Scriptures from '../components/Scriptures'
 import SacredServices from '../components/SacredServices'
@@ -25,6 +26,9 @@ const Home = () => {
 
       {/* 3. Narrative Sections with Staggered Spacing */}
       <main className="relative">
+        
+        {/* About Laura Section */}
+        <AboutLaura />
         
         {/* About Section: Wrapped in a soft container to pop from background */}
         <div className="pb-12 bg-white/30 backdrop-blur-sm border-y border-[#E2DDD3]/50 relative z-10">

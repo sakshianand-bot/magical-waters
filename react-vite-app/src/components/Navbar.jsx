@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import AudioToggle from './AudioToggle'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -51,6 +52,7 @@ const Navbar = () => {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
+            <AudioToggle />
             {navLinks.map((link, index) => (
               <motion.a
                 key={link.href}
@@ -146,6 +148,11 @@ const Navbar = () => {
                   {link.label}
                 </motion.a>
               ))}
+              
+              <div className="px-4 py-2">
+                <AudioToggle />
+              </div>
+
               <motion.a
                 href="#booknow"
                 className="block mt-4 py-3 px-4 bg-[#3B82F6] text-white text-center rounded-full font-medium"

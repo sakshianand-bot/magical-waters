@@ -45,8 +45,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-white/80 leading-relaxed text-sm">
-              Transform your life with intentional water structuring and sacred sigils. 
-              Experience the harmony of structured water for positive living.
+              This service is for spiritual and wellness support and is not a substitute for medical treatment.
             </p>
           </motion.div>
 
